@@ -4,8 +4,9 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"runtime"
 
-	"github.com/doskhanl/concurrent/app/channels"
+	"github.com/doskhanl/concurrent/app/couples"
 )
 
 func main() {
@@ -14,11 +15,15 @@ func main() {
 		log.Fatal(err)
 	}
 	fmt.Printf("Working directory is: %s\n", wd)
+	// Setting max processors size
+	runtime.GOMAXPROCS(4)
 	// goroutines.Exec()
 	//goroutines.ExecAsycWeb()
 	//goroutines.ExecFileWatcher(&wd)
 	//channels.SimpleChan()
 	//channels.BufferedChan()
 	//channels.RangeOverChan()
-	channels.SwitchChan()
+	//channels.SwitchChan()
+	//couples.MutexLock()
+	couples.MutexLockChan()
 }
