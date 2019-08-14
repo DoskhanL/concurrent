@@ -1,10 +1,11 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"os"
 
-	"github.com/doskhanl/concurrent/app/goroutines"
+	"github.com/doskhanl/concurrent/app/channels"
 )
 
 func main() {
@@ -12,7 +13,11 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	fmt.Printf("Working directory is: %s\n", wd)
 	// goroutines.Exec()
 	//goroutines.ExecAsycWeb()
-	goroutines.ExecFileWatcher(&wd)
+	//goroutines.ExecFileWatcher(&wd)
+	//channels.SimpleChan()
+	//channels.BufferedChan()
+	channels.RangeOverChan()
 }
