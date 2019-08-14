@@ -6,6 +6,7 @@ import (
 	"io/ioutil"
 	"log"
 	"os"
+	"runtime"
 	"strconv"
 	"strings"
 	"time"
@@ -27,7 +28,7 @@ func ExecFileWatcher(wd *string) {
 			fmt.Println(f.Name())
 		}
 	*/
-
+	runtime.GOMAXPROCS(4)
 	sourceFolder := *wd + "/source"
 
 	for {
@@ -54,6 +55,7 @@ func ExecFileWatcher(wd *string) {
 			}
 			// Calling anonymous function for reading data from file asynchronously
 			go func(data string) {
+				start := time.Now()
 				reader := csv.NewReader(strings.NewReader(data))
 				records, err := reader.ReadAll()
 				if err != nil {
@@ -87,9 +89,11 @@ func ExecFileWatcher(wd *string) {
 						fmt.Println(fmt.Sprintf("Received invoice '%v' for $%.2f and submitted",
 							invoice.Number, invoice.Amount))
 					}
-
 				}
+				elapsedTime := time.Since(start)
+				fmt.Println(fmt.Sprintf("Execution time: %s", elapsedTime))
 			}(string(data))
 		}
 	}
+
 }
