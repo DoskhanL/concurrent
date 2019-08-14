@@ -19,5 +19,6 @@ func main() {
 	//goroutines.ExecFileWatcher(&wd)
 	//channels.SimpleChan()
 	//channels.BufferedChan()
-	channels.RangeOverChan()
+	//channels.RangeOverChan()
+	channels.SwitchChan()
 }

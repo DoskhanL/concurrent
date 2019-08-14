@@ -7,7 +7,7 @@ import (
 
 // RangeOverChan func
 func RangeOverChan() {
-	fmt.Println("Rangin over channels")
+	fmt.Println("Ranging over channels")
 
 	phrase := "These are times that try men's souls.\n"
 
@@ -18,11 +18,15 @@ func RangeOverChan() {
 	}
 	close(ch)
 	// infinite loop for watching the channel
-	for {
+	/*for {
 		if msg, ok := <-ch; ok {
 			fmt.Print(msg + " ")
 		} else {
 			break
 		}
+	}*/
+	// Changed by looping through the channel
+	for msg := range ch {
+		fmt.Print(msg + " ")
 	}
 }
