@@ -25,5 +25,6 @@ func main() {
 	//channels.RangeOverChan()
 	//channels.SwitchChan()
 	//couples.MutexLock()
-	couples.MutexLockChan()
+	//couples.MutexLockChan()
+	couples.SimulateEvents()
 }
