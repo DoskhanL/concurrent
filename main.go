@@ -25,5 +25,9 @@ func main() {
 	//channels.RangeOverChan()
 	//channels.SwitchChan()
 	//couples.MutexLock()
-	couples.MutexLockChan()
+	//couples.MutexLockChan()
+	//couples.SimulateEvents()
+	//couples.ExecCallback()
+	//couples.ExecPromises()
+	couples.ExecPipeFilter()
 }
