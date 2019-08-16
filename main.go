@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"log"
 	"os"
-	"runtime"
 
 	"github.com/doskhanl/concurrent/app/couples"
 )
@@ -16,7 +15,7 @@ func main() {
 	}
 	fmt.Printf("Working directory is: %s\n", wd)
 	// Setting max processors size
-	runtime.GOMAXPROCS(4)
+	//runtime.GOMAXPROCS(4)
 	// goroutines.Exec()
 	//goroutines.ExecAsycWeb()
 	//goroutines.ExecFileWatcher(&wd)
@@ -29,5 +28,7 @@ func main() {
 	//couples.SimulateEvents()
 	//couples.ExecCallback()
 	//couples.ExecPromises()
-	couples.ExecPipeFilter()
+	//couples.ExecPipeFilter()
+	//couples.ExecETL(&wd)
+	couples.ExecETLChannel(&wd)
 }
