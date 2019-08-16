@@ -27,5 +27,6 @@ func main() {
 	//couples.MutexLock()
 	//couples.MutexLockChan()
 	//couples.SimulateEvents()
-	couples.ExecCallback()
+	//couples.ExecCallback()
+	couples.ExecPromises()
 }
